@@ -139,3 +139,71 @@ The website is fully responsive with breakpoints:
 ---
 
 Built with ❤️ by Ashish Shabu 
+
+---
+
+## 1. Push Your Code to GitHub
+
+- Create a new repository on GitHub (e.g., `your-username/portfolio`)
+- Push your local code to this repository
+
+---
+
+## 2. Install the `gh-pages` Package
+
+In your project directory, run:
+```bash
+npm install gh-pages --save-dev
+```
+
+---
+
+## 3. Update `package.json`
+
+Add the following fields:
+
+- **Homepage** (replace with your actual username and repo name):
+  ```json
+  "homepage": "https://your-username.github.io/your-repo-name"
+  ```
+
+- **Scripts** (add these to your `"scripts"` section):
+  ```json
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+  ```
+
+---
+
+## 4. Deploy
+
+Run:
+```bash
+npm run deploy
+```
+This will build your app and push the `build` folder to the `gh-pages` branch of your repo.
+
+---
+
+## 5. Enable GitHub Pages
+
+- Go to your repository on GitHub
+- Go to **Settings > Pages**
+- Set the source branch to `gh-pages` and the folder to `/ (root)` or `/docs` if you use that
+
+---
+
+## 6. Access Your Site
+
+- Your site will be live at:  
+  `https://your-username.github.io/your-repo-name`
+
+---
+
+### ⚠️ Note:
+- If you use React Router, you may need to handle 404s or use HashRouter for client-side routing.
+- Custom domains can also be set up in the GitHub Pages settings.
+
+---
+
+Would you like me to update your `package.json` and add the deploy scripts for you? 
