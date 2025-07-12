@@ -92,22 +92,7 @@ Update the following files to customize content:
 - Adjust Framer Motion variants in individual components
 - Customize background animations in respective components
 
-## 🚀 Deployment
 
-### Build for Production
-```bash
-npm run build
-```
-
-### Deploy to Vercel
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run: `vercel`
-3. Follow the prompts
-
-### Deploy to Netlify
-1. Build the project: `npm run build`
-2. Drag the `build` folder to Netlify
-3. Configure custom domain if needed
 
 ## 📱 Responsive Design
 
@@ -136,9 +121,7 @@ The website is fully responsive with breakpoints:
 - Prettier formatting
 - Consistent component structure
 
-## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
@@ -149,9 +132,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-- **Email**: ashishshabu@gmail.com
-- **GitHub**: [@ashishshabu](https://github.com/ashishshabu)
-- **LinkedIn**: [Ashish Shabu](https://linkedin.com/in/ashishshabu)
+- **Email**: ashishshabu2@gmail.com
+- **GitHub**: [@ashishshabu](https://github.com/ashish-shabu)
+- **LinkedIn**: [Ashish Shabu](https://linkedin.com/in/ashish-shabu)
 
 ---
 
