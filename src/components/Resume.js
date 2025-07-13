@@ -30,7 +30,7 @@ const Resume = () => {
 
   const softSkills = [
     "Leadership", "Team Management", "Problem Solving", "Communication",
-    "Project Planning", , "Event Organization",  
+    "Project Planning", "Event Organization"
   ];
 
   const handleDownload = () => {
