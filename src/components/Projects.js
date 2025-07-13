@@ -87,66 +87,66 @@ const Projects = () => {
                         <motion.div
                             key={project.title}
                             variants={cardVariants}
-                            className={`glass-effect rounded-xl p-6 hover-glow group ${project.featured ? 'ring-2 ring-primary-500' : ''
-                                }`}
+                            className={`glass-effect rounded-xl p-6 hover-glow group flex flex-col h-full ${project.featured ? 'ring-2 ring-primary-500' : ''}`}
                         >
-                            <div className="space-y-4">
-                                <div className="flex items-start justify-between">
-                                    <h3 className="text-xl font-semibold text-white group-hover:text-primary-400 transition-colors duration-300">
-                                        {project.title}
-                                    </h3>
-                                    {project.featured && (
-                                        <span className="text-xs bg-primary-500 text-white px-2 py-1 rounded-full">
-                                            Featured
-                                        </span>
-                                    )}
-                                </div>
-
-                                <p className="text-gray-300 text-sm leading-relaxed">
-                                    {project.description}
-                                </p>
-
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tech.map((tech, techIndex) => (
-                                        <span
-                                            key={techIndex}
-                                            className="text-xs bg-dark-700 text-gray-300 px-2 py-1 rounded-full"
-                                        >
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                <div className="flex items-center space-x-4 text-lg">
-                                    {project.icons.map((Icon, iconIndex) => (
-                                        <Icon
-                                            key={iconIndex}
-                                            className="text-gray-400 group-hover:text-primary-400 transition-colors duration-300"
-                                        />
-                                    ))}
-                                </div>
-
-                                <div className="flex space-x-4 pt-4">
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex items-center space-x-2 text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300"
-                                        style={{ cursor: "pointer" }}
+                            {/* Status badge (optional) */}
+                            {project.status && (
+                                <span className={`text-xs font-semibold px-3 py-1 rounded-full mb-4 w-max ${project.status === 'Completed' ? 'bg-green-900 text-green-300' : 'bg-yellow-900 text-yellow-300'}`}>
+                                    {project.status}
+                                </span>
+                            )}
+                            {/* Project name */}
+                            <h3 className="text-2xl font-bold text-white mb-2">
+                                {project.title}
+                            </h3>
+                            {/* Description */}
+                            <p className="text-gray-300 text-base leading-relaxed mb-4">
+                                {project.description}
+                            </p>
+                            {/* Tech stack tags with icon and text together */}
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {project.tech.map((tech, techIndex) => (
+                                    <span
+                                        key={techIndex}
+                                        className="text-sm bg-dark-700 text-gray-300 px-3 py-1 rounded-full whitespace-nowrap"
                                     >
-                                        <FaGithub />
-                                        <span>Code</span>
-                                    </a>
-                                    {/* <a
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                            {/* Tech stack icons */}
+                            <div className="flex items-center space-x-4 text-xl mb-4">
+                                {project.icons && project.icons.map((Icon, iconIndex) => (
+                                    <Icon
+                                        key={iconIndex}
+                                        className="text-gray-400 group-hover:text-primary-400 transition-colors duration-300"
+                                    />
+                                ))}
+                            </div>
+                            {/* Spacer to push buttons to bottom */}
+                            <div className="flex-grow" />
+                            {/* Buttons at the bottom */}
+                            <div className="flex space-x-4 pt-4 mt-auto">
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center space-x-2 text-base text-gray-200 hover:text-primary-400 transition-colors duration-300 font-semibold"
+                                    style={{ cursor: "pointer" }}
+                                >
+                                    <FaGithub />
+                                    <span>GitHub</span>
+                                </a>
+                                {project.live && (
+                                    <a
                                         href={project.live}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center space-x-2 text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                                        className="px-6 py-2 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-full transition-colors duration-300 text-base"
                                     >
-                                        <FaExternalLinkAlt />
-                                        <span>Live</span>
-                                    </a> */}
-                                </div>
+                                        Live Demo
+                                    </a>
+                                )}
                             </div>
                         </motion.div>
                     ))}

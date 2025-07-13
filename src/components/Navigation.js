@@ -58,12 +58,14 @@ const Navigation = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div
+          <motion.button
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold gradient-text"
+            whileTap={{ scale: 0.95 }}
+            onClick={() => scrollToSection('#home')}
+            className="text-2xl font-bold gradient-text cursor-pointer"
           >
             Ashish Shabu
-          </motion.div>
+          </motion.button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
