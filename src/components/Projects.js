@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaExternalLinkAlt, FaReact, FaPython, FaNodeJs } from 'react-icons/fa';
-import { SiOpencv, SiMongodb, SiHtml5, SiCss3, SiJavascript, SiFlask } from 'react-icons/si';
+import { SiOpencv, SiMongodb, SiHtml5, SiCss3, SiJavascript, SiFlask, SiBootstrap, SiNodedotjs, SiExpress, SiHandlebarsdotjs, SiRazorpay } from 'react-icons/si';
 import CodeBackground from './CodeBackground';
 
 const Projects = () => {
@@ -13,13 +13,11 @@ const Projects = () => {
 
     const projects = [
         {
-            title: "InvigiLens",
-            description: "Real-time malpractice detection system using YOLO object detection with instant alerts and monitoring dashboard.",
-            tech: ["Python", "YOLO", "OpenCV", "React", "Node.js"],
-            icons: [FaPython, SiOpencv, FaReact, FaNodeJs],
-            github: "https://github.com/ashishshabu/invigilens",
-            live: "https://invigilens-demo.vercel.app",
-            featured: true
+            title: "LumoVale",
+            description: "A full-stack e-commerce platform built with Node.js, Express, MongoDB, and Handlebars. Features include user authentication, shopping cart, order management, admin product control, image upload, and Razorpay payment integration—all wrapped in a responsive Bootstrap UI.",
+            tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "Express", "MongoDB", "Handlebars", "Razorpay"],
+            icons: [SiHtml5, SiCss3, SiJavascript, SiBootstrap, SiNodedotjs, SiExpress, SiMongodb, SiHandlebarsdotjs, SiRazorpay],
+            github: "https://github.com/Ashish-Shabu/LumoVale"
         },
         {
             title: "Modernized Printing Solutions",
@@ -27,7 +25,7 @@ const Projects = () => {
             tech: ["HTML", "CSS", "JavaScript", "Flask", "MongoDB"],
             icons: [SiHtml5, SiCss3, SiJavascript, SiFlask, SiMongodb],
             github: "https://github.com/Ashish-Shabu/modernized-printing-solutions",
-            live: "https://printing-solutions-demo.vercel.app"
+
         },
         {
             title: "Portfolio Website",
@@ -134,11 +132,12 @@ const Projects = () => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex items-center space-x-2 text-sm text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                                        style={{ cursor: "pointer" }}
                                     >
                                         <FaGithub />
                                         <span>Code</span>
                                     </a>
-                                    <a
+                                    {/* <a
                                         href={project.live}
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -146,7 +145,7 @@ const Projects = () => {
                                     >
                                         <FaExternalLinkAlt />
                                         <span>Live</span>
-                                    </a>
+                                    </a> */}
                                 </div>
                             </div>
                         </motion.div>

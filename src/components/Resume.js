@@ -36,8 +36,8 @@ const Resume = () => {
   const handleDownload = () => {
     // Placeholder for resume download
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Replace with actual resume path
-    link.download = 'Ashish_Shabu_Resume.pdf';
+    link.href = '/Ashish_Shabu_Resume_2025.pdf';
+    link.download = 'Ashish_Shabu_Resume_2025.pdf';
     link.click();
   };
 

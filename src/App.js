@@ -24,7 +24,7 @@ function App() {
       <footer className="bg-dark-950 py-8 border-t border-gray-800">
         <div className="container-custom text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Ashish Shabu. .
+            © 2025 Ashish Shabu. 
           </p>
         </div>
       </footer>
