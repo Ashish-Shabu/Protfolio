@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
 import CircuitBackground from './CircuitBackground';
 
 const Contact = () => {
@@ -18,7 +19,6 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -30,7 +30,6 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus(null);
 
     try {
       // Replace with your EmailJS service ID, template ID, and public key
@@ -41,17 +40,17 @@ const Contact = () => {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
-          to_email: 'ashishshabu2@gmail.com'
+          to_email: 'ashishshabu4@gmail.com'
         },
         'yJoU5_8DsmwPhG730' // Replace with your actual public key
       );
 
       console.log('Email sent successfully:', result);
-      setSubmitStatus('success');
+      toast.success("Message sent successfully! I'll get back to you soon.");
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Email send failed:', error);
-      setSubmitStatus('error');
+      toast.error("Failed to send message. Please try again or contact me directly.");
     } finally {
       setIsSubmitting(false);
     }
@@ -61,8 +60,8 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       label: 'Email',
-      value: 'ashishshabu2@gmail.com',
-      link: 'mailto:ashishshabu2@gmail.com'
+      value: 'ashishshabu4@gmail.com',
+      link: 'mailto:ashishshabu4@gmail.com'
     },
     {
       icon: FaPhone,
@@ -94,7 +93,7 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       label: 'Email',
-      url: 'mailto:ashishshabu2@gmail.com',
+      url: 'mailto:ashishshabu4@gmail.com',
       color: 'hover:text-red-400'
     }
   ];
@@ -182,18 +181,6 @@ const Contact = () => {
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
-
-                {submitStatus === 'success' && (
-                  <div className="mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-lg">
-                    <p className="text-green-400 text-center">Message sent successfully! I'll get back to you soon.</p>
-                  </div>
-                )}
-
-                {submitStatus === 'error' && (
-                  <div className="mt-4 p-4 bg-red-500/20 border border-red-500/30 rounded-lg">
-                    <p className="text-red-400 text-center">Failed to send message. Please try again or contact me directly.</p>
-                  </div>
-                )}
               </form>
             </div>
           </motion.div>

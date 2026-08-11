@@ -15,12 +15,11 @@ const Resume = () => {
     year: "2022 - 2026",
   };
 
-  // const certifications = [
-  //   "AWS Certified Cloud Practitioner",
-  //   "Google Cloud Platform Fundamentals",
-  //   "Microsoft Azure AI Fundamentals",
-  //   "TensorFlow Developer Certificate",
-  // ];
+  const certifications = [
+    "Introduction to IT and AWS Cloud - AWS",
+    "Full Stack Developer Bootcamp - GeeksforGeeks",
+    "Cloud Computing Foundations - Google Cloud"
+  ];
 
   const technicalSkills = [
     "Machine Learning & AI", "Web Development", "Mobile App Development",
@@ -34,10 +33,9 @@ const Resume = () => {
   ];
 
   const handleDownload = () => {
-    // Placeholder for resume download
     const link = document.createElement('a');
-    link.href = '/Ashish_Shabu_Resume_2025.pdf';
-    link.download = 'Ashish_Shabu_Resume_2025.pdf';
+    link.href = '/Ashish_Shabu_Resume.pdf';
+    link.download = 'Ashish_Shabu_Resume.pdf';
     link.click();
   };
 
@@ -105,14 +103,14 @@ const Resume = () => {
             {/* Certifications */}
             <div className="glass-effect rounded-xl p-6">
               <div className="flex items-center space-x-3 mb-4">
-                <FaUsers className="text-2xl text-primary-400" />
-                <h3 className="text-xl font-semibold text-white">Soft Skills</h3>
+                <FaCertificate className="text-2xl text-primary-400" />
+                <h3 className="text-xl font-semibold text-white">Certifications</h3>
               </div>
-              <div className="grid grid-cols-2 gap-2">
-                {softSkills.map((skill, index) => (
-                  <div key={index} className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-primary-400 rounded-full"></div>
-                    <span className="text-gray-300 text-sm">{skill}</span>
+              <div className="flex flex-col gap-2">
+                {certifications.map((cert, index) => (
+                  <div key={index} className="flex items-start space-x-2">
+                    <div className="w-1.5 h-1.5 bg-primary-400 rounded-full mt-1.5"></div>
+                    <span className="text-gray-300 text-sm leading-tight">{cert}</span>
                   </div>
                 ))}
               </div>
@@ -129,7 +127,7 @@ const Resume = () => {
         >
           <div className="grid md:grid-cols-2 gap-8">
             {/* Technical Skills */}
-            {/* <div className="glass-effect rounded-xl p-6">
+            <div className="glass-effect rounded-xl p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <FaCode className="text-2xl text-primary-400" />
                 <h3 className="text-xl font-semibold text-white">Technical Skills</h3>
@@ -142,10 +140,10 @@ const Resume = () => {
                   </div>
                 ))}
               </div>
-            </div> */}
+            </div>
 
             {/* Soft Skills */}
-            {/* <div className="glass-effect rounded-xl p-6">
+            <div className="glass-effect rounded-xl p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <FaUsers className="text-2xl text-primary-400" />
                 <h3 className="text-xl font-semibold text-white">Soft Skills</h3>
@@ -158,7 +156,7 @@ const Resume = () => {
                   </div>
                 ))}
               </div>
-            </div> */}
+            </div>
           </div>
         </motion.div>
       </div>

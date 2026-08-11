@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaGithub, FaExternalLinkAlt, FaReact, FaPython, FaNodeJs } from 'react-icons/fa';
+import { FaGithub, FaReact, FaPython } from 'react-icons/fa';
 import { SiOpencv, SiMongodb, SiHtml5, SiCss3, SiJavascript, SiFlask, SiBootstrap, SiNodedotjs, SiExpress, SiHandlebarsdotjs, SiRazorpay } from 'react-icons/si';
 import CodeBackground from './CodeBackground';
 
@@ -12,6 +12,14 @@ const Projects = () => {
     });
 
     const projects = [
+        {
+            title: "Invigilens: AI-Powered Proctoring",
+            description: "A real-time AI-based examination monitoring system using microservices architecture to stream video feeds with sub-second latency. Engineered a computer vision pipeline using OpenCV and YOLOv8 to detect 6 malpractice behaviors.",
+            tech: ["Python", "Node.js", "Express.js", "MongoDB", "WebSockets", "OpenCV"],
+            icons: [FaPython, SiNodedotjs, SiExpress, SiMongodb, SiOpencv],
+            github: "https://github.com/Ashish-Shabu/Invigilens",
+            featured: true
+        },
         {
             title: "LumoVale",
             description: "A full-stack e-commerce platform built with Node.js, Express, MongoDB, and Handlebars. Features include user authentication, shopping cart, order management, admin product control, image upload, and Razorpay payment integration—all wrapped in a responsive Bootstrap UI.",

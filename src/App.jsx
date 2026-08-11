@@ -5,12 +5,18 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
-// import CustomCursor from './components/CustomCursor';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <div className="App">
-      
+      <Toaster position="bottom-right" toastOptions={{
+        style: {
+          background: '#1e293b',
+          color: '#f8fafc',
+          border: '1px solid #334155'
+        }
+      }} />
       <Navigation />
       <main>
         <Home />

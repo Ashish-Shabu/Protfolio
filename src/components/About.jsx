@@ -86,9 +86,9 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg text-gray-300 leading-relaxed text-justify"
             >
-              I'm a final-year Computer Science Engineering student at Amal Jyothi College of Engineering, passionate about Web Development and Cybersecurity. I enjoy transforming complex ideas into seamless digital experiences using technologies like Flask, Node.js, Express, MongoDB, and Bootstrap. My work focuses on developing secure, user-centric applications with scalable backend logic and clean frontend design.
-
-              Currently working on LumoVale, an e-commerce platform, I continue to explore new stacks and development practices that push my capabilities and reflect real-world usability.
+              I'm a Computer Science Engineering graduate from Amal Jyothi College of Engineering, passionate about Software Engineering, System Design, and Artificial Intelligence. I enjoy building scalable backend architectures, real-time systems, and integrating computer vision models into robust full-stack applications using Python, Node.js, Express, MongoDB, and WebSockets.
+              <br /><br />
+              Recently, I've been focused on developing AI-powered monitoring systems like Invigilens and building full-stack applications with dynamic real-time features. I continuously explore new technologies to push my capabilities in backend logic and modern frontend design.
             </motion.p>
 
             <motion.div
@@ -97,11 +97,11 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="space-y-4"
             >
-              {/* <h3 className="text-2xl font-semibold text-primary-400">Highlights</h3>
+              <h3 className="text-2xl font-semibold text-primary-400">Highlights</h3>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                  <span>Event Coordinator at ACM AJCE</span>
+                  <span>Vice Chair & Event Coordinator at ACM AJCE</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
@@ -109,13 +109,9 @@ const About = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                  <span>UI/UX Workshop Trainer</span>
+                  <span>Passionate about AI & Scalable Systems</span>
                 </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                  <span>Passionate about AI & Machine Learning</span>
-                </li>
-              </ul> */}
+              </ul>
             </motion.div>
           </div>
 
