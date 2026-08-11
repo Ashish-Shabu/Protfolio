@@ -20,13 +20,7 @@ const Projects = () => {
             github: "https://github.com/Ashish-Shabu/Invigilens",
             featured: true
         },
-        {
-            title: "LumoVale",
-            description: "A full-stack e-commerce platform built with Node.js, Express, MongoDB, and Handlebars. Features include user authentication, shopping cart, order management, admin product control, image upload, and Razorpay payment integration—all wrapped in a responsive Bootstrap UI.",
-            tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "Express", "MongoDB", "Handlebars", "Razorpay"],
-            icons: [SiHtml5, SiCss3, SiJavascript, SiBootstrap, SiNodedotjs, SiExpress, SiMongodb, SiHandlebarsdotjs, SiRazorpay],
-            github: "https://github.com/Ashish-Shabu/LumoVale"
-        },
+        
         {
             title: "Modernized Printing Solutions",
             description: "A full-stack print request management platform built with a Flask backend and a clean HTML/CSS/JS frontend. Designed for institutions to manage printing workflows with real-time tracking, role-based access, and MongoDB data storage.",
@@ -34,6 +28,13 @@ const Projects = () => {
             icons: [SiHtml5, SiCss3, SiJavascript, SiFlask, SiMongodb],
             github: "https://github.com/Ashish-Shabu/modernized-printing-solutions",
 
+        },
+        {
+            title: "LumoVale",
+            description: "A full-stack e-commerce platform built with Node.js, Express, MongoDB, and Handlebars. Features include user authentication, shopping cart, order management, admin product control, image upload, and Razorpay payment integration—all wrapped in a responsive Bootstrap UI.",
+            tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "Express", "MongoDB", "Handlebars", "Razorpay"],
+            icons: [SiHtml5, SiCss3, SiJavascript, SiBootstrap, SiNodedotjs, SiExpress, SiMongodb, SiHandlebarsdotjs, SiRazorpay],
+            github: "https://github.com/Ashish-Shabu/LumoVale"
         },
         {
             title: "Portfolio Website",
@@ -134,13 +135,12 @@ const Projects = () => {
                             {/* Spacer to push buttons to bottom */}
                             <div className="flex-grow" />
                             {/* Buttons at the bottom */}
-                            <div className="flex space-x-4 pt-4 mt-auto">
+                            <div className="flex space-x-4 pt-4 mt-auto relative z-10">
                                 <a
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center space-x-2 text-base text-gray-200 hover:text-primary-400 transition-colors duration-300 font-semibold"
-                                    style={{ cursor: "pointer" }}
+                                    className="flex items-center space-x-2 text-base text-gray-200 hover:text-primary-400 transition-colors duration-300 font-semibold cursor-pointer"
                                 >
                                     <FaGithub />
                                     <span>GitHub</span>

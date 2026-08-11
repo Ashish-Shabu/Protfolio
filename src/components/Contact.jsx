@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 import CircuitBackground from './CircuitBackground';
 
@@ -32,24 +31,28 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Replace with your EmailJS service ID, template ID, and public key
-              const result = await emailjs.send(
-          'service_nox55n9',
-          'template_198l55k', // Replace with your actual template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          name: formData.name,
+          email: formData.email,
           message: formData.message,
-          to_email: 'ashishshabu4@gmail.com'
-        },
-        'yJoU5_8DsmwPhG730' // Replace with your actual public key
-      );
+          subject: `Portfolio Contact: ${formData.name}`,
+        }),
+      });
 
-      console.log('Email sent successfully:', result);
-      toast.success("Message sent successfully! I'll get back to you soon.");
-      setFormData({ name: '', email: '', message: '' });
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Message sent successfully! I'll get back to you soon.");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
     } catch (error) {
-      console.error('Email send failed:', error);
+      console.error('Form submission failed:', error);
       toast.error("Failed to send message. Please try again or contact me directly.");
     } finally {
       setIsSubmitting(false);
