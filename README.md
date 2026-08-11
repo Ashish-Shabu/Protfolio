@@ -1,40 +1,32 @@
-# Ashish Shabu - Portfolio Website
+# Ashish Shabu - Software Development Engineer Portfolio
 
-A modern, responsive portfolio website built with React.js, featuring smooth animations, dark theme, and interactive elements.
+A blazing-fast, modern portfolio website built with **React**, **Vite**, and **Tailwind CSS**. Designed with a sleek dark theme, interactive 3D glassmorphism elements, and advanced SEO to showcase software engineering projects and technical skills.
 
 ## 🚀 Features
 
 ### Design & UI
-- **Dark Theme**: Modern dark color scheme with cyan accents
-- **Responsive Design**: Fully responsive layout for desktop and mobile
-- **Smooth Animations**: Framer Motion powered animations and transitions
-- **Custom Cursor**: Interactive custom cursor that reacts to hover states
-- **Glass Morphism**: Modern glass effect components
+- **Dark Theme**: Modern dark color scheme with glowing neon cyan/blue cyber accents.
+- **Responsive Design**: Fully responsive layout for mobile, tablet, and desktop.
+- **Smooth Animations**: Powered by `framer-motion` for fluid scroll transitions and micro-interactions.
+- **Glassmorphism**: Premium frosted-glass effect components.
+- **Toast Notifications**: Integrated `react-hot-toast` for sleek contact form feedback.
+
+### Advanced SEO & Performance
+- **Vite Powered**: Lightning-fast local development and optimized production builds.
+- **Rich Metadata**: Complete Open Graph (OG) tags and Twitter Cards for beautiful link previews.
+- **Structured Data**: Schema.org JSON-LD injected for enhanced search engine understanding.
+- **Search Engine Ready**: Includes custom `robots.txt` and `sitemap.xml`.
 
 ### Animated Backgrounds
-- **Home Section**: Matrix rain animation (binary code falling effect)
-- **Projects Section**: Floating code lines animation
-- **Contact Section**: Animated circuit lines background
+- **Home Section**: Matrix rain animation (binary code falling effect).
+- **Projects Section**: Floating code lines animation.
+- **Contact Section**: Animated circuit lines background.
 
-### Sections
-1. **Home**: Hero section with name, tagline, and social links
-2. **About**: Personal information, highlights, and technical skills grid
-3. **Projects**: Project showcase with hover effects and tech stack badges
-4. **Resume**: Download section with education and certifications overview
-5. **Contact**: Contact form with social links and contact information
-
-### Technical Stack
-- **React.js**: Frontend framework
-- **Tailwind CSS**: Utility-first CSS framework
-- **Framer Motion**: Animation library
-- **React Icons**: Icon library
-- **React Intersection Observer**: Scroll-based animations
-
-## 🛠️ Installation
+## 🛠️ Installation & Setup
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/ashishshabu/portfolio.git
+   git clone https://github.com/Ashish-Shabu/portfolio.git
    cd portfolio
    ```
 
@@ -43,80 +35,61 @@ A modern, responsive portfolio website built with React.js, featuring smooth ani
    npm install
    ```
 
-3. **Start the development server**
+3. **Start the development server (Vite)**
    ```bash
    npm start
+   # or
+   npm run dev
    ```
 
 4. **Open your browser**
-   Navigate to `http://localhost:3000`
+   Navigate to `http://localhost:5173` (default Vite port) or the port displayed in your terminal.
+
+5. **Build for Production**
+   ```bash
+   npm run build
+   ```
 
 ## 📁 Project Structure
 
 ```
-src/
-├── components/
-│   ├── Navigation.js      # Navigation bar with smooth scrolling
-│   ├── Home.js           # Hero section with matrix rain
-│   ├── About.js          # About section with skills grid
-│   ├── Projects.js       # Projects showcase
-│   ├── Resume.js         # Resume download section
-│   ├── Contact.js        # Contact form and info
-│   ├── CustomCursor.js   # Interactive custom cursor
-│   ├── MatrixRain.js     # Matrix rain animation
-│   ├── CircuitBackground.js # Circuit lines animation
-│   └── CodeBackground.js # Floating code lines
-├── App.js               # Main app component
-├── index.js             # React entry point
-└── index.css            # Global styles and Tailwind imports
+.
+├── public/
+│   ├── favicon.jpg          # Custom OG/Favicon logo
+│   ├── og-image.jpg         # Open Graph preview image
+│   ├── robots.txt           # Search engine crawling rules
+│   └── sitemap.xml          # Site map for indexing
+├── src/
+│   ├── components/
+│   │   ├── Navigation.jsx   # Navigation bar with smooth scrolling
+│   │   ├── Home.jsx         # Hero section
+│   │   ├── About.jsx        # Bio and technical skills grid
+│   │   ├── Projects.jsx     # Software engineering project showcase
+│   │   ├── Resume.jsx       # Certifications and skills summary
+│   │   ├── Contact.jsx      # EmailJS contact form with toast notifications
+│   │   ├── CustomCursor.jsx # Optional interactive custom cursor
+│   │   ├── MatrixRain.jsx   # Canvas-based matrix rain
+│   │   ├── CircuitBackground.jsx
+│   │   └── CodeBackground.jsx
+│   ├── App.jsx              # Main app wrapper and Toaster setup
+│   ├── index.jsx            # React root entry point
+│   └── index.css            # Global Tailwind utilities and custom CSS
+├── index.html               # Main HTML template with SEO tags
+├── vite.config.js           # Vite build configuration
+└── package.json             # Dependencies and scripts
 ```
 
-## 🎨 Customization
+## 🎨 Technologies Used
 
-### Colors
-The color scheme can be customized in `tailwind.config.js`:
-- Primary colors: Blue/cyan gradient
-- Dark theme: Various shades of gray
-- Accent colors: Cyan highlights
-
-### Content
-Update the following files to customize content:
-- `src/components/Home.js`: Name, tagline, social links
-- `src/components/About.js`: Personal info, skills, highlights
-- `src/components/Projects.js`: Project details and links
-- `src/components/Resume.js`: Education, certifications
-- `src/components/Contact.js`: Contact information
-
-### Animations
-- Modify animation parameters in `tailwind.config.js`
-- Adjust Framer Motion variants in individual components
-- Customize background animations in respective components
-
-
-
-## 📱 Responsive Design
-
-The website is fully responsive with breakpoints:
-- **Mobile**: < 768px
-- **Tablet**: 768px - 1024px
-- **Desktop**: > 1024px
-
-## 🎯 Performance Features
-
-- **Lazy Loading**: Components load as they come into view
-- **Optimized Animations**: Hardware-accelerated animations
-- **Minimal Bundle**: Tree-shaking and code splitting
-
-
-### Code Style
-- ESLint configuration included
-- Prettier formatting
-- Consistent component structure
-
-
+- **Frontend**: React 18, Vite
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: React Icons (Fa, Si)
+- **Email Service**: EmailJS
+- **Notifications**: React Hot Toast
 
 ## 📞 Contact
 
-- **Email**: ashishshabu2@gmail.com
-- **GitHub**: [@ashishshabu](https://github.com/ashish-shabu)
-- **LinkedIn**: [Ashish Shabu](https://linkedin.com/in/ashish-shabu)
+- **Email**: ashishshabu4@gmail.com
+- **GitHub**: [@Ashish-Shabu](https://github.com/Ashish-Shabu)
+- **LinkedIn**: [Ashish Shabu](https://www.linkedin.com/in/ashish-shabu/)
