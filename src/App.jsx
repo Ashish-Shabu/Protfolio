@@ -5,6 +5,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
+import InteractiveTerminal from './components/InteractiveTerminal';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <main>
         <Home />
         <About />
+        <InteractiveTerminal />
         <Projects />
         <Resume />
         <Contact />
