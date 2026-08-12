@@ -9,6 +9,7 @@ A blazing-fast, modern portfolio website built with **React**, **Vite**, and **T
 - **Responsive Design**: Fully responsive layout for mobile, tablet, and desktop.
 - **Smooth Animations**: Powered by `framer-motion` for fluid scroll transitions and micro-interactions.
 - **Glassmorphism**: Premium frosted-glass effect components.
+- **Interactive Terminal**: Fully functional macOS-style terminal component with easter eggs and command parsing.
 - **Toast Notifications**: Integrated `react-hot-toast` for sleek contact form feedback.
 
 ### Advanced SEO & Performance
@@ -66,7 +67,8 @@ A blazing-fast, modern portfolio website built with **React**, **Vite**, and **T
 │   │   ├── About.jsx        # Bio and technical skills grid
 │   │   ├── Projects.jsx     # Software engineering project showcase
 │   │   ├── Resume.jsx       # Certifications and skills summary
-│   │   ├── Contact.jsx      # EmailJS contact form with toast notifications
+│   │   ├── InteractiveTerminal.jsx # Playable terminal easter egg
+│   │   ├── Contact.jsx      # Web3Forms contact form with toast notifications
 │   │   ├── CustomCursor.jsx # Optional interactive custom cursor
 │   │   ├── MatrixRain.jsx   # Canvas-based matrix rain
 │   │   ├── CircuitBackground.jsx
@@ -85,7 +87,7 @@ A blazing-fast, modern portfolio website built with **React**, **Vite**, and **T
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 - **Icons**: React Icons (Fa, Si)
-- **Email Service**: EmailJS
+- **Email Service**: Web3Forms API
 - **Notifications**: React Hot Toast
 
 ## 📞 Contact
