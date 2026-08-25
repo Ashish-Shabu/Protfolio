@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaReact, FaPython } from 'react-icons/fa';
 import { SiOpencv, SiMongodb, SiHtml5, SiCss3, SiJavascript, SiFlask, SiBootstrap, SiNodedotjs, SiExpress, SiHandlebarsdotjs, SiRazorpay } from 'react-icons/si';
+import CodeBackground from './CodeBackground';
 
 const Projects = () => {
     const [ref, inView] = useInView({
@@ -68,7 +69,8 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="section-padding relative overflow-hidden bg-retro-bg">
+        <section id="projects" className="section-padding relative overflow-hidden">
+            <CodeBackground />
 
             <div className="container-custom relative z-10">
                 <motion.div
@@ -79,7 +81,7 @@ const Projects = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl font-bold gradient-text mb-4">Projects</h2>
-                    <p className="text-xl text-black font-bold max-w-2xl mx-auto">
+                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">
                         Here are some of my recent projects that showcase my skills and passion for technology.
                     </p>
                 </motion.div>
@@ -94,7 +96,7 @@ const Projects = () => {
                         <motion.div
                             key={project.title}
                             variants={cardVariants}
-                            className={`retro-window hover-push group flex flex-col h-full ${project.featured ? 'border-retro-highlight' : 'border-black'}`}
+                            className={`glass-effect rounded-xl p-6 hover-glow group flex flex-col h-full ${project.featured ? 'ring-2 ring-primary-500' : ''}`}
                         >
                             {/* Status badge (optional) */}
                             {project.status && (
@@ -103,11 +105,11 @@ const Projects = () => {
                                 </span>
                             )}
                             {/* Project name */}
-                            <h3 className="text-2xl font-bold text-black mb-2">
+                            <h3 className="text-2xl font-bold text-white mb-2">
                                 {project.title}
                             </h3>
                             {/* Description */}
-                            <p className="text-black font-medium text-base leading-relaxed mb-4">
+                            <p className="text-gray-300 text-base leading-relaxed mb-4">
                                 {project.description}
                             </p>
                             {/* Tech stack tags with icon and text together */}
@@ -115,7 +117,7 @@ const Projects = () => {
                                 {project.tech.map((tech, techIndex) => (
                                     <span
                                         key={techIndex}
-                                        className="text-sm bg-white border-2 border-black text-black font-bold px-3 py-1 whitespace-nowrap"
+                                        className="text-sm bg-dark-700 text-gray-300 px-3 py-1 rounded-full whitespace-nowrap"
                                     >
                                         {tech}
                                     </span>
@@ -126,7 +128,7 @@ const Projects = () => {
                                 {project.icons && project.icons.map((Icon, iconIndex) => (
                                     <Icon
                                         key={iconIndex}
-                                        className="text-black group-hover:scale-110 transition-transform duration-75"
+                                        className="text-gray-400 group-hover:text-primary-400 transition-colors duration-300"
                                     />
                                 ))}
                             </div>
@@ -138,19 +140,19 @@ const Projects = () => {
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center space-x-2 text-base text-black hover:text-white hover:bg-black border-2 border-transparent hover:border-black px-3 py-1 transition-colors duration-75 font-bold cursor-pointer"
+                                    className="flex items-center space-x-2 text-base text-gray-200 hover:text-primary-400 transition-colors duration-300 font-semibold cursor-pointer"
                                 >
                                     <FaGithub />
-                                    <span>[ GitHub ]</span>
+                                    <span>GitHub</span>
                                 </a>
                                 {project.live && (
                                     <a
                                         href={project.live}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="retro-button-primary text-base"
+                                        className="px-6 py-2 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-full transition-colors duration-300 text-base"
                                     >
-                                        [ Live Demo ]
+                                        Live Demo
                                     </a>
                                 )}
                             </div>
