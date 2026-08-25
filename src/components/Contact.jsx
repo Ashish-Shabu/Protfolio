@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import toast from 'react-hot-toast';
-import CircuitBackground from './CircuitBackground';
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -102,8 +101,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-padding relative overflow-hidden">
-      <CircuitBackground />
+    <section id="contact" className="section-padding relative overflow-hidden bg-retro-bg">
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -114,7 +112,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold gradient-text mb-4">Get In Touch</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-black font-bold max-w-2xl mx-auto">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
           </p>
         </motion.div>
@@ -126,11 +124,11 @@ const Contact = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="glass-effect rounded-xl p-8">
-              <h3 className="text-2xl font-semibold text-white mb-6">Send Message</h3>
+            <div className="retro-window">
+              <h3 className="text-2xl font-bold text-black mb-6">Send Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="name" className="block text-sm font-bold text-black mb-2">
                     Name
                   </label>
                   <input
@@ -140,13 +138,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-dark-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-400 transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-white shadow-retro-inset border-2 border-black text-black font-bold placeholder-gray-500 focus:outline-none transition-colors duration-75"
                     placeholder="Your name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="email" className="block text-sm font-bold text-black mb-2">
                     Email
                   </label>
                   <input
@@ -156,13 +154,13 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-dark-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-400 transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-white shadow-retro-inset border-2 border-black text-black font-bold placeholder-gray-500 focus:outline-none transition-colors duration-75"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-bold text-black mb-2">
                     Message
                   </label>
                   <textarea
@@ -172,7 +170,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows="5"
-                    className="w-full px-4 py-3 bg-dark-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-400 transition-colors duration-300 resize-none"
+                    className="w-full px-4 py-3 bg-white shadow-retro-inset border-2 border-black text-black font-bold placeholder-gray-500 focus:outline-none transition-colors duration-75 resize-none"
                     placeholder="Your message..."
                   />
                 </div>
@@ -180,9 +178,9 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold rounded-lg hover:from-primary-600 hover:to-accent-600 transition-all duration-300 transform hover:scale-105 hover-glow disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full retro-button-primary text-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? '[ Sending... ]' : '[ Send Message ]'}
                 </button>
               </form>
             </div>
@@ -196,25 +194,25 @@ const Contact = () => {
             className="space-y-8"
           >
             {/* Contact Info */}
-            <div className="glass-effect rounded-xl p-8">
-              <h3 className="text-2xl font-semibold text-white mb-6">Contact Information</h3>
+            <div className="retro-window">
+              <h3 className="text-2xl font-bold text-black mb-6">Contact Information</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center">
-                      <info.icon className="text-xl text-primary-400" />
+                    <div className="w-12 h-12 bg-white border-2 border-black flex items-center justify-center shadow-retro-sm">
+                      <info.icon className="text-xl text-black" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400">{info.label}</p>
+                      <p className="text-sm text-black font-bold">{info.label}</p>
                       {info.link ? (
                         <a
                           href={info.link}
-                          className="text-white hover:text-primary-400 transition-colors duration-300"
+                          className="text-black hover:text-white hover:bg-black px-1 transition-colors duration-75 font-medium"
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="text-white">{info.value}</p>
+                        <p className="text-black font-medium">{info.value}</p>
                       )}
                     </div>
                   </div>
@@ -223,8 +221,8 @@ const Contact = () => {
             </div>
 
             {/* Social Links */}
-            <div className="glass-effect rounded-xl p-8">
-              <h3 className="text-2xl font-semibold text-white mb-6">Connect With Me</h3>
+            <div className="retro-window">
+              <h3 className="text-2xl font-bold text-black mb-6">Connect With Me</h3>
               <div className="flex space-x-6">
                 {socialLinks.map((social, index) => (
                   <a
@@ -232,7 +230,7 @@ const Contact = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-12 h-12 bg-dark-700 rounded-lg flex items-center justify-center text-xl text-gray-400 ${social.color} transition-all duration-300 hover:scale-110 hover-glow`}
+                    className={`w-12 h-12 bg-white border-2 border-black flex items-center justify-center text-xl text-black hover:text-white hover:bg-black transition-colors duration-75 hover-push shadow-retro-sm`}
                     title={social.label}
                   >
                     <social.icon />
@@ -242,9 +240,9 @@ const Contact = () => {
             </div>
 
             {/* Quick Response */}
-            <div className="glass-effect rounded-xl p-8">
-              <h3 className="text-2xl font-semibold text-white mb-4">Quick Response</h3>
-              <p className="text-gray-300 text-sm leading-relaxed">
+            <div className="retro-window mt-8">
+              <h3 className="text-2xl font-bold text-black mb-4">Quick Response</h3>
+              <p className="text-black font-medium text-sm leading-relaxed">
                 I typically respond to messages within 24 hours. For urgent matters,
                 feel free to reach out directly via email or phone.
               </p>

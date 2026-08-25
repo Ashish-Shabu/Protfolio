@@ -14,42 +14,57 @@
   }
 
   body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0f172a;
-    color: #f8fafc;
+    font-family: 'Space Mono', sans-serif;
+    background-color: #dfdfdf;
+    background-image: 
+      linear-gradient(#d5d5d5 1px, transparent 1px),
+      linear-gradient(90deg, #d5d5d5 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #000000;
     overflow-x: hidden;
   }
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #1e293b;
+    width: 16px;
+    background: #dfdfdf;
+    border-left: 2px solid #000;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #475569;
-    border-radius: 4px;
+    background: #c0c0c0;
+    border: 2px solid #000;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #64748b;
+    background: #a0a0a0;
   }
 }
 
 @layer components {
+  /* No more glowing text, just a classic bold pixel font style */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-400 to-accent-500 bg-clip-text text-transparent;
+    @apply font-pixel text-black font-bold tracking-wider;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
   }
 
-  .glass-effect {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  /* Replaces glass-effect */
+  .retro-window {
+    @apply bg-retro-window border-4 border-black shadow-retro p-6;
   }
 
-  .hover-glow {
-    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25;
+  /* Replaces hover-glow */
+  .hover-push {
+    @apply transition-all duration-75 hover:translate-x-1 hover:translate-y-1 hover:shadow-retro-sm;
+  }
+
+  /* A mechanical button press class */
+  .retro-button {
+    @apply bg-retro-window border-2 border-black shadow-retro-sm font-bold text-black px-6 py-2 transition-all duration-75 hover:bg-[#a0a0a0] active:translate-x-1 active:translate-y-1 active:shadow-none;
+  }
+  
+  .retro-button-primary {
+    @apply bg-retro-highlight border-2 border-black shadow-retro-sm font-bold text-white px-6 py-2 transition-all duration-75 active:translate-x-1 active:translate-y-1 active:shadow-none;
   }
 
   .section-padding {
@@ -61,67 +76,6 @@
   }
 }
 
-/* Matrix rain effect */
-.matrix-rain {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.matrix-column {
-  position: absolute;
-  top: -100%;
-  color: #06b6d4;
-  font-family: 'Fira Code', monospace;
-  font-size: 14px;
-  line-height: 1;
-  animation: matrix 20s linear infinite;
-  opacity: 0.7;
-}
-
-/* Circuit animation */
-.circuit-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.1;
-}
-
-.circuit-line {
-  stroke: #06b6d4;
-  stroke-width: 1;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: circuit 10s linear infinite;
-}
-
-/* Code animation */
-.code-lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.05;
-}
-
-.code-line {
-  position: absolute;
-  color: #06b6d4;
-  font-family: 'Fira Code', monospace;
-  font-size: 12px;
-  white-space: nowrap;
-  animation: float 6s ease-in-out infinite;
-}
-
 /* Restore default cursor */
 * {
   cursor: auto;
@@ -129,4 +83,4 @@
 
 button, a, input, textarea, select {
   cursor: pointer;
-} 
+}

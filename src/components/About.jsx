@@ -61,7 +61,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="section-padding bg-dark-900">
+    <section id="about" className="section-padding bg-retro-bg">
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -84,7 +84,7 @@ const About = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg text-gray-300 leading-relaxed text-justify"
+              className="text-lg text-black leading-relaxed text-justify"
             >
               I'm a Computer Science Engineering graduate from Amal Jyothi College of Engineering, passionate about Software Engineering, System Design, and Artificial Intelligence. I enjoy building scalable backend architectures, real-time systems, and integrating computer vision models into robust full-stack applications using Python, Node.js, Express, MongoDB, and WebSockets.
               <br /><br />
@@ -97,18 +97,18 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="space-y-4"
             >
-              <h3 className="text-2xl font-semibold text-primary-400">Highlights</h3>
-              <ul className="space-y-3 text-gray-300">
+              <h3 className="text-2xl font-semibold text-retro-highlight">Highlights</h3>
+              <ul className="space-y-3 text-black">
                 <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-black"></div>
                   <span>Vice Chair & Event Coordinator at ACM AJCE</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-black"></div>
                   <span>UXPLORE Hackathon Organizer</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-black"></div>
                   <span>Passionate about AI & Scalable Systems</span>
                 </li>
               </ul>
@@ -139,10 +139,10 @@ const About = () => {
                 <motion.div
                   key={skill.name}
                   variants={itemVariants}
-                  className="glass-effect p-4 rounded-lg text-center hover-glow group"
+                  className="retro-window text-center hover-push group flex flex-col items-center justify-center"
                 >
-                  <skill.icon className={`text-3xl mb-2 ${skill.color} group-hover:scale-110 transition-transform duration-300`} />
-                  <p className="text-sm text-gray-300 font-medium">{skill.name}</p>
+                  <skill.icon className={`text-3xl mb-2 ${skill.color} group-hover:scale-110 transition-transform duration-75`} />
+                  <p className="text-sm text-black font-bold mt-2">{skill.name}</p>
                 </motion.div>
               ))}
             </motion.div>

@@ -35,7 +35,19 @@ module.exports = {
           500: '#06b6d4',
           600: '#0891b2',
           700: '#0e7490',
+        },
+        retro: {
+          bg: '#dfdfdf', // Pale beige/gray for body
+          window: '#c0c0c0', // Classic UI gray
+          border: '#000000', // Pure black borders
+          text: '#000000', // Black text
+          highlight: '#000080', // Classic Mac/Windows selection blue
         }
+      },
+      boxShadow: {
+        'retro': '4px 4px 0px 0px rgba(0,0,0,1)',
+        'retro-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
+        'retro-inset': 'inset 2px 2px 0px 0px rgba(0,0,0,0.5), inset -2px -2px 0px 0px rgba(255,255,255,0.8)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
@@ -82,7 +94,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        'mono': ['Fira Code', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+        'mono': ['Space Mono', 'Fira Code', 'monospace'],
+        'pixel': ['VT323', 'monospace'],
+        'sans': ['Space Mono', 'sans-serif'], // Forcing space mono everywhere as the default sans
       },
     },
   },

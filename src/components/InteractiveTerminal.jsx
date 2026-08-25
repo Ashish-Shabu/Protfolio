@@ -9,7 +9,7 @@ const InteractiveTerminal = () => {
   });
 
   const [history, setHistory] = useState([
-    { type: 'system', content: 'Welcome to Ashish\'s Terminal v1.0.0' },
+    { type: 'system', content: 'MS-DOS Version 6.22\n(C)Copyright Microsoft Corp 1981-1994.' },
     { type: 'system', content: 'Type "help" to see available commands.\n' },
   ]);
   const [currentInput, setCurrentInput] = useState('');
@@ -218,7 +218,7 @@ const InteractiveTerminal = () => {
   };
 
   return (
-    <section className="section-padding bg-dark-900">
+    <section className="section-padding bg-retro-bg">
       <div className="container-custom max-w-4xl mx-auto">
         <motion.div
           ref={ref}
@@ -227,82 +227,53 @@ const InteractiveTerminal = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Terminal Window */}
-          <div
-            className="rounded-xl overflow-hidden shadow-2xl"
-            style={{
-              border: '1px solid rgba(56, 189, 248, 0.2)',
-              boxShadow: '0 0 40px rgba(56, 189, 248, 0.08)',
-            }}
-          >
+          <div className="retro-window p-1">
             {/* Title Bar */}
-            <div
-              className="flex items-center px-4 py-3 space-x-3"
-              style={{ background: '#1a1a2e' }}
-            >
-              {/* macOS Dots */}
-              <div className="flex space-x-2">
-                <div className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-colors" />
-                <div className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-400 transition-colors" />
-              </div>
-              {/* Title */}
-              <span
-                className="text-xs font-mono text-gray-400 flex-1 text-center"
-                style={{ letterSpacing: '0.05em' }}
-              >
-                ashish@portfolio:~$
+            <div className="flex items-center justify-between px-2 py-1 bg-retro-highlight border-b-2 border-black mb-1">
+              <span className="text-white font-bold text-sm tracking-wide">
+                C:\WINDOWS\system32\cmd.exe
               </span>
-              <div className="w-14" /> {/* Spacer to center the title */}
+              <button className="bg-[#c0c0c0] border-2 border-black shadow-retro-sm text-black font-bold text-xs px-2 hover:bg-black hover:text-white transition-colors duration-75">
+                X
+              </button>
             </div>
 
-            {/* Terminal Body */}
             <div
               ref={terminalBodyRef}
               onClick={focusInput}
-              className="p-5 font-mono text-sm overflow-y-auto cursor-text"
-              style={{
-                background: '#0d1117',
-                height: '380px',
-                lineHeight: '1.7',
-              }}
+              className="p-3 font-mono text-sm overflow-y-auto cursor-text border-inset border-2 border-gray-600 bg-black text-gray-300"
+              style={{ height: '380px', lineHeight: '1.5' }}
             >
               {/* History */}
               {history.map((entry, index) => (
                 <div key={index} className="whitespace-pre-wrap">
                   {entry.type === 'input' && (
-                    <div>
-                      <span className="text-green-400">ashish</span>
-                      <span className="text-gray-500">@</span>
-                      <span className="text-blue-400">portfolio</span>
-                      <span className="text-gray-500">:~$ </span>
-                      <span className="text-gray-200">{entry.content}</span>
+                    <div className="text-gray-300">
+                      C:\PORTFOLIO&gt; {entry.content}
                     </div>
                   )}
                   {entry.type === 'output' && (
-                    <div className="text-cyan-300 mb-1">{entry.content}</div>
+                    <div className="text-gray-300 mb-2">{entry.content}</div>
                   )}
                   {entry.type === 'system' && (
-                    <div className="text-gray-500 mb-1">{entry.content}</div>
+                    <div className="text-gray-400 mb-2">{entry.content}</div>
                   )}
                   {entry.type === 'error' && (
-                    <div className="text-red-400 mb-1">{entry.content}</div>
+                    <div className="text-red-500 mb-2">{entry.content}</div>
                   )}
                 </div>
               ))}
 
               {/* Current Input Line */}
-              <div className="flex items-center">
-                <span className="text-green-400">ashish</span>
-                <span className="text-gray-500">@</span>
-                <span className="text-blue-400">portfolio</span>
-                <span className="text-gray-500">:~$ </span>
+              <div className="flex items-center text-gray-300">
+                <span>C:\PORTFOLIO&gt;&nbsp;</span>
                 <input
                   ref={inputRef}
                   type="text"
                   value={currentInput}
                   onChange={(e) => setCurrentInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  className="flex-1 bg-transparent outline-none text-gray-200 font-mono text-sm caret-cyan-400"
+                  className="flex-1 bg-transparent outline-none font-mono text-sm caret-gray-300"
                   spellCheck="false"
                   autoComplete="off"
                 />
@@ -315,7 +286,7 @@ const InteractiveTerminal = () => {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 1, delay: 1.2 }}
-            className="text-center text-gray-600 text-xs mt-4 font-mono"
+            className="text-center text-black font-bold text-xs mt-4"
           >
             💡 Click the terminal and type a command. Try "help" to get started.
           </motion.p>

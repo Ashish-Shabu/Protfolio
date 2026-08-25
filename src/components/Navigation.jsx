@@ -51,8 +51,8 @@ const Navigation = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isColored
-          ? 'bg-dark-900/95 backdrop-blur-sm '
-          : 'bg-transparent'
+          ? 'bg-retro-window border-b-4 border-black shadow-retro-sm'
+          : 'bg-transparent border-b-4 border-transparent'
       }`}
     >
       <div className="container-custom">
@@ -75,7 +75,7 @@ const Navigation = () => {
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-primary-400 transition-colors duration-300 font-medium"
+                className="text-black font-bold hover:bg-black hover:text-white transition-colors duration-75 px-3 py-1 border-2 border-transparent hover:border-black"
               >
                 {item.name}
               </motion.button>
@@ -86,7 +86,7 @@ const Navigation = () => {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-300 hover:text-primary-400 transition-colors duration-300"
+            className="md:hidden text-black hover:bg-black hover:text-white p-2 border-2 border-transparent hover:border-black transition-colors duration-75"
           >
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </motion.button>
@@ -102,7 +102,7 @@ const Navigation = () => {
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden"
         >
-          <div className="py-4 space-y-4 border-t border-gray-800">
+          <div className="py-4 space-y-2 border-t-4 border-black bg-retro-window px-4 pb-6 shadow-retro">
             {navItems.map((item, index) => (
               <motion.button
                 key={item.name}
@@ -110,7 +110,7 @@ const Navigation = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.href)}
-                className="block w-full text-left text-gray-300 hover:text-primary-400 transition-colors duration-300 font-medium py-2"
+                className="block w-full text-left text-black font-bold hover:bg-black hover:text-white transition-colors duration-75 py-2 px-3 border-2 border-transparent hover:border-black"
               >
                 {item.name}
               </motion.button>
