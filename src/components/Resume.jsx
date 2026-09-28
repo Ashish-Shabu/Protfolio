@@ -118,7 +118,7 @@ const Resume = () => {
           </motion.div>
         </div>
 
-        {/* Skills Overview */}
+        {/* {/* Skills Overview 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -126,7 +126,7 @@ const Resume = () => {
           className="mt-16"
         >
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Technical Skills */}
+            {/* Technical Skills 
             <div className="glass-effect rounded-xl p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <FaCode className="text-2xl text-primary-400" />
@@ -142,7 +142,7 @@ const Resume = () => {
               </div>
             </div>
 
-            {/* Soft Skills */}
+            {/* Soft Skills *
             <div className="glass-effect rounded-xl p-6">
               <div className="flex items-center space-x-3 mb-4">
                 <FaUsers className="text-2xl text-primary-400" />
@@ -159,6 +159,7 @@ const Resume = () => {
             </div>
           </div>
         </motion.div>
+        */}
       </div>
     </section>
   );
