@@ -91,7 +91,7 @@ const About = () => {
               Recently, I've been focused on developing AI-powered monitoring systems like Invigilens and building full-stack applications with dynamic real-time features. I continuously explore new technologies to push my capabilities in backend logic and modern frontend design.
             </motion.p>
 
-            <motion.div
+            {/*<motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -112,7 +112,7 @@ const About = () => {
                   <span>Passionate about AI & Scalable Systems</span>
                 </li>
               </ul>
-            </motion.div>
+            </motion.div>*/}
           </div>
 
           <motion.div
